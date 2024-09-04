@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board</title>
+    <!-- Icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-list-check"></i> Task Board</h1>
+        <!-- <form id="newTask-form">
+            <div class="form-control">
+                <input type="text" id="newTask" placeholder="Nova Tarefa" />
+                <button type="submit">
+                    <i class="fa-thin fa-plus"></i>
+                </button>
+            </div>
+        </form> -->
+    </header>
+
+    <div class="container">
+        <div class="new-container">
+            <div class="new-items">
+                <form id="newTask-form">
+                    <div class="form-control">
+                        <input type="text" id="newTask" placeholder="Nova Tarefa" />
+                        <button type="submit">
+                            <i class="fa-thin fa-plus"></i>
+                        </button>
+                    </div>
+                </form>
+                <hr>
+                <div class="tasks">
+                    <h4>Desenvolver Layout Front End</h4>
+                    <button class="edit-task">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="tasks">
+                    <h4>Estudar Python</h4>
+                    <button class="edit-task">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="doing-container">
+            <h3>Doing</h3>
+            <hr>
+            <div class="tasks">
+                <h4>Aplicar CSS Board</h4>
+                <button class="edit-task">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+        <div class="done-container">
+            <h3>Done</h3>
+            <hr>
+            <div class="tasks">
+                <h4>Definir Layout</h4>
+                <button class="edit-task">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Info MVP-->
+    <footer>
+        <p>MVP Sprint Desenvolvimento Full Stack Básico</p>
+    </footer>
+</body>
+
+</html>

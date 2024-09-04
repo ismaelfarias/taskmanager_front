@@ -1,0 +1,134 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background-color: #F9F9F9;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+button {
+    background-color: #FDFDFD;
+    color: #102F5e;
+    border: 2px solid #102F5e;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+button:hover{
+    background-color: #FDFDFD;
+
+}
+
+button:hover > i {
+    color: skyblue;
+}
+
+button i {
+    color: #102F5e;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input,
+select {
+    padding: 0.25rem 0.5rem;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    flex: 1 1 200px;
+    min-height: 92vh;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.new-container {
+    display: flex;
+    background-color: #f9f9f9;
+    margin: 10px;
+    width: 33%;
+    border-radius: 15px;
+}
+
+.new-container,
+h4 {
+    padding: 5px;
+}
+
+.doing-container {
+    background-color: #F9F9F9;
+    margin: 10px;
+    width: 33%;
+    border-radius: 15px;
+}
+
+.doing-container,
+h4 {
+    padding: 10px;
+}
+
+.done-container {
+    background-color: #F9F9F9;
+    margin: 10px;
+    width: 33%;
+    border-radius: 15px;
+}
+
+.done-container,
+h4 {
+    padding: 10px;
+}
+
+
+.tasks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom:  1px solid #ddd;
+    transition: .3s;
+}
+
+.tasks,
+h4 {
+    flex: 1;
+    font-size: 1.9rem;
+}
+
+.tasks, 
+botton {
+    margin-left: 0.4rem;
+}
+
+footer {
+    text-align: center;
+}
+
+.form-control {
+    display: flex;
+}
