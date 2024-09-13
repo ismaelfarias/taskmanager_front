@@ -4,7 +4,8 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-    color: #333;
+    color: #113946;
+    background-color: #fff2d8;
 }
 
 h1,
@@ -13,14 +14,15 @@ h3,
 h4,
 h5,
 h6 {
-    color: #333;
+    color: #113946;
 }
 
 /* Header */
 
 header {
-    background-color: #F9F9F9;
+    background-color: #fff2d8;
     padding: 0 1rem 1rem;
+    margin: 10;
     border-bottom: 1px solid #ccc;
 }
 
@@ -69,7 +71,7 @@ select {
 
 .new-container {
     display: flex;
-    background-color: #f9f9f9;
+    background-color: #EAD7BB;
     margin: 10px;
     width: 33%;
     border-radius: 15px;
@@ -80,8 +82,12 @@ h4 {
     padding: 5px;
 }
 
+.new-items {
+    width: 100%;
+}
+
 .doing-container {
-    background-color: #F9F9F9;
+    background-color: #EAD7BB;
     margin: 10px;
     width: 33%;
     border-radius: 15px;
@@ -93,7 +99,7 @@ h4 {
 }
 
 .done-container {
-    background-color: #F9F9F9;
+    background-color: #EAD7BB;
     margin: 10px;
     width: 33%;
     border-radius: 15px;
@@ -125,8 +131,35 @@ botton {
     margin-left: 0.4rem;
 }
 
+.tasks:hover {
+    /*background-color: #bca37f;*/
+    border-color: #113946;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 75%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
 footer {
     text-align: center;
+    background-color: #bca37f;
 }
 
 .form-control {
