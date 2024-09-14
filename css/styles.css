@@ -39,12 +39,12 @@ button {
     transition: 0.4s;
 }
 
-button:hover{
+button:hover {
     background-color: #FDFDFD;
 
 }
 
-button:hover > i {
+button:hover>i {
     color: skyblue;
 }
 
@@ -116,7 +116,7 @@ h4 {
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
-    border-bottom:  1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     transition: .3s;
 }
 
@@ -126,7 +126,7 @@ h4 {
     font-size: 1.9rem;
 }
 
-.tasks, 
+.tasks,
 botton {
     margin-left: 0.4rem;
 }
@@ -139,22 +139,61 @@ botton {
 /* Modal */
 .modal {
     display: none;
+    /* Hidden by default */
     position: fixed;
-    z-index: 0;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 75%;
-    height: 75%;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
     overflow: auto;
+    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
 }
 
 .modal-content {
+    position: relative;
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
+    margin: auto;
+    padding: 0;
     border: 1px solid #888;
     width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.taskEditForm {
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 footer {

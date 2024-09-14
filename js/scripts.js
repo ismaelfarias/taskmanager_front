@@ -8,7 +8,10 @@ const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const doingTasks = document.querySelector("#doing-tasks");
 const doneTasks = document.querySelector("#done-tasks");
-
+const taskModal = document.querySelector("#task-modal");
+const taskModalContent = document.querySelector("#modal-content-form");
+const closeTaskModal = document.getElementsByClassName("close")[0];
+const taskModalForm = document.getElementsByClassName("taskEditForm")
 
 const getList = async () => {
     let url = 'http://127.0.0.1:5000/tasks';
@@ -48,8 +51,69 @@ const addTask = async (text) => {
         });
 }
 
+const editTask = async (id) => {
+    let url = 'http://127.0.0.1:5000/task';
+    fetch(url  + "?id=" + id, {
+        method: 'GET',
+    })
+//        .then((response) => response.json())
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            return Promise.reject(response);
+        })
+        .then((data) => {
+            console.log(data);
+            data.tasks.forEach(item => (tid = item.id, titulo = item.titulo, descricao = item.descricao, taskstatus = item.status, dt_criacao = item.dt_criacao));
+            const taskEdit = document.createElement("form");
+            taskEdit.setAttribute('class', "taskEditForm")
+            taskEdit.setAttribute('id', "taskEditForm")
+            const formItemID = document.createElement("input");
+            formItemID.setAttribute('class', "taskID");
+            formItemID.setAttribute('id', "taskID");
+            formItemID.setAttribute('value', tid)
+            taskEdit.appendChild(formItemID);
+
+            const formtItemTitulo = document.createElement("input");
+            formtItemTitulo.setAttribute('value', titulo)
+            formtItemTitulo.setAttribute('id', "task-titulo")
+            taskEdit.appendChild(formtItemTitulo)
+
+            const formtItemDesc = document.createElement("input");
+            formtItemDesc.setAttribute('value', descricao)
+            formtItemDesc.setAttribute('id', "itemDesc")
+            taskEdit.appendChild(formtItemDesc)
+
+            const formtItemStatus = document.createElement("input");
+            formtItemStatus.setAttribute('value', taskstatus)
+            formtItemStatus.setAttribute('id', "itemStatus")
+            taskEdit.appendChild(formtItemStatus)
+
+            const formtItemDtCriacao = document.createElement("input");
+            formtItemDtCriacao.setAttribute('value', dt_criacao)
+            formtItemDtCriacao.setAttribute('id', "data-criacao")
+            taskEdit.appendChild(formtItemDtCriacao)
+
+            const saveBtn = document.createElement("button");
+            saveBtn.setAttribute('id', "save-btn")
+            saveBtn.classList.add("saveInput");
+            saveBtn.innerHTML = 'Salvar. <i class="fa-solid fa-check"></i>';
+            taskEdit.appendChild(saveBtn);
+
+            console.log(taskEdit)
+            console.log(taskModalContent)
+            taskModalContent.appendChild(taskEdit);
+
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+}
+
 const delTask = async (id) => {
-    let url = 'http://127.0.0.1:5000/task/';
+    let url = 'http://127.0.0.1:5000/task';
     console.log(id);
     fetch(url + "?id=" + id, {
         method: 'DELETE',
@@ -104,11 +168,6 @@ const saveTask = (text, id = 1, status) => {
 
 }
 
-
-
-
-
-
 // Eventos
 
 newTaskForm.addEventListener("submit", (e) => {
@@ -117,25 +176,33 @@ newTaskForm.addEventListener("submit", (e) => {
     const inputValue = newTaskInput.value;
 
     if (inputValue) {
+        console.log(inputValue)
         saveTask(inputValue);
         addTask(inputValue);
     }
 });
 
-
 document.addEventListener("click", (e) => {
     const targetEl = e.target;
     const parentEl = targetEl.closest("div");
-    const taskID = parentEl.querySelector(".taskID").innerText;
 
     if (targetEl.classList.contains("edit-task")) {
+        const taskID = parentEl.querySelector(".taskID").innerText;
         const source = parentEl;
         doingTasks.append(source);
+        taskModal.style.display = "block";
+        editTask(taskID);
     }
 
     if (targetEl.classList.contains("delInput")) {
         parentEl.remove();
         console.log(taskID);
         delTask(taskID);
+    }
+
+    if (targetEl.classList.contains("close")) {
+        taskModal.style.display = "none";
+        taskModalContent.replaceChildren();
+        
     }
 })
