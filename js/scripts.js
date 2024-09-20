@@ -24,7 +24,7 @@ const getList = async () => {
     })
         .then((response) => response.json())
         .then((data) => {
-            data.tasks.forEach(item => saveTask(item.titulo, item.id, item.status));
+            data.tasks.forEach(item => saveTask(item.titulo, item.id, item.status, item.descricao));
 
         })
         .catch((error) => {
@@ -109,7 +109,7 @@ const delTask = async (id) => {
         .catch((error) => { console.error('Error:', error) });
 }
 
-const saveTask = (text, id, status) => {
+const saveTask = (text, id, status, descricao) => {
 
     if (!id) {
         id = "";
@@ -128,8 +128,9 @@ const saveTask = (text, id, status) => {
     newItemTitle.innerText = text;
     tasks.appendChild(newItemTitle);
 
-    const newItemDesc = document.createElement("span");
-    newItemDesc.setAttribute('class', "taskDescricao")
+    const newItemDesc = document.createElement("textarea");
+    newItemDesc.setAttribute('class', "taskDescricao");
+    newItemDesc.innerText = descricao;
     tasks.appendChild(newItemDesc);
 
     const editBtn = document.createElement("button");
@@ -170,7 +171,7 @@ const saveTask = (text, id, status) => {
         newItems.appendChild(tasks);
     }
 
-    // Retorna o foco para o formulário
+    // Retorna o foco para o formulário de Nova Tarefa
     newTaskInput.value = "";
     newTaskInput.focus();
 
@@ -185,8 +186,9 @@ newTaskForm.addEventListener("submit", (e) => {
 
     if (inputValue) {
         console.log(inputValue)
-        saveTask(inputValue);
         addTask(inputValue);
+        saveTask(inputValue);
+        document.location.reload();
     }
 });
 
@@ -224,7 +226,6 @@ document.addEventListener("click", (e) => {
         taskModalContent.querySelector(".modal-task-id").innerText = taskID;
         taskModalContent.querySelector("#modal-task-title").value = taskTitulo;
         taskModalContent.querySelector("#modal-task-description").value = taskDescricao;
-        //taskModalContent.querySelector("#modal-task-status").innerHTML = taskStatus
         taskModal.style.display = "block";
         editTask(taskID, taskTitulo);
     }
