@@ -16,7 +16,7 @@ const localID = 0;
 
 const modalContentFormId = document.querySelector("#modal-content-form");
 
-// Cunsulta tarefas existentes no banco de dados e apresenta no Board
+// Consulta tarefas existentes no banco de dados e as apresenta no Board
 const getList = async () => {
     let url = 'http://127.0.0.1:5000/tasks';
     fetch(url, {
@@ -82,21 +82,6 @@ function updateStats() {
 const editTask = async (id, titulo) => {
     let url = 'http://127.0.0.1:5000/task';
 
-    // const taskEdit = document.createElement("form");
-    // taskEdit.setAttribute('class', "taskEditForm")
-    // taskEdit.setAttribute('id', "taskEditForm")
-    // const formItemID = document.createElement("input");
-    // formItemID.setAttribute('class', "taskID");
-    // formItemID.setAttribute('id', "taskID");
-    // formItemID.setAttribute('value', id)
-    // taskEdit.appendChild(formItemID);
-    // const formtItemTitulo = document.createElement("input");
-    // formtItemTitulo.setAttribute('value', titulo)
-    // formtItemTitulo.setAttribute('id', "task-titulo")
-    // taskEdit.appendChild(formtItemTitulo)
-    //taskModalContent.appendChild(taskEdit);
-    console.log(id);
-    //modalContentFormId.setAttribute('innerText', id);
     document.getElementById("text-modal-title").value = "Titulo da Tarefa";
 
 
@@ -107,55 +92,11 @@ const editTask = async (id, titulo) => {
         .then((data) => {
             console.log(data);
             data.tasks.forEach(item => (tid = item.id, titulo = item.titulo, descricao = item.descricao, taskstatus = item.status, dt_criacao = item.dt_criacao));
-            // const taskEdit = document.createElement("div");
-            // taskEdit.setAttribute('class', "taskEditForm")
-            // taskEdit.setAttribute('id', "taskEditForm")
-            // const formItemID = document.createElement("input");
-            // formItemID.setAttribute('class', "taskID");
-            // formItemID.setAttribute('id', "taskID");
-            // formItemID.setAttribute('value', tid)
-            // taskEdit.appendChild(formItemID);
-
-            // const formtItemTitulo = document.createElement("input");
-            // formtItemTitulo.setAttribute('value', titulo)
-            // formtItemTitulo.setAttribute('id', "task-titulo")
-            // taskEdit.appendChild(formtItemTitulo)
-
-            // const formtItemDesc = document.createElement("input");
-            // formtItemDesc.setAttribute('value', descricao)
-            // formtItemDesc.setAttribute('id', "itemDesc")
-            // taskEdit.appendChild(formtItemDesc)
-
-            // const formtItemStatus = document.createElement("input");
-            // formtItemStatus.setAttribute('value', taskstatus)
-            // formtItemStatus.setAttribute('id', "itemStatus")
-            // taskEdit.appendChild(formtItemStatus)
-
-            // const formtItemDtCriacao = document.createElement("input");
-            // formtItemDtCriacao.setAttribute('value', dt_criacao)
-            // formtItemDtCriacao.setAttribute('id', "data-criacao")
-            // taskEdit.appendChild(formtItemDtCriacao)
-
-            // const saveBtn = document.createElement("button");
-            // saveBtn.setAttribute('id', "save-btn")
-            // saveBtn.setAttribute('value', "salvar")
-            // saveBtn.classList.add("saveInput");
-            // //saveBtn.setAttribute('onclick', "updateTask()")
-            // saveBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-            // taskEdit.appendChild(saveBtn);
-
-            // console.log(taskEdit)
-            // console.log(taskModalContent)
-            //taskModalContent.appendChild(taskEdit);
 
         })
         .catch((error) => {
             console.error('Error:', error);
         });
-    //         .finally(() => {
-    //         alert("Servidor indisponivel")
-    //         updateStats()
-    //    });
 }
 
 const delTask = async (id) => {
@@ -255,7 +196,6 @@ document.addEventListener("click", (e) => {
 
     if (targetEl.classList.contains("close")) {
         taskModal.style.display = "none";
-        //taskModalContent.replaceChildren();
 
     }
 

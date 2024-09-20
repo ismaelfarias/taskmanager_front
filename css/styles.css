@@ -201,7 +201,7 @@ botton {
     border-radius: 3px;
     font-weight: bold;
     cursor: pointer;
-    align-self:flex-end;
+    align-self: flex-end;
 }
 
 .taskEditForm {
@@ -213,8 +213,7 @@ botton {
 
 }
 
-.taskEditForm
-input {
+.taskEditForm input {
     width: 100%;
     clear: both;
 }
