@@ -22,7 +22,8 @@ h6 {
 header {
     background-color: #fff2d8;
     padding: 0 1rem 1rem;
-    margin: 10;
+    margin: 10px;
+    margin-top: 10px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -142,6 +143,10 @@ botton {
     font-size: 1.5rem;
 }
 
+.task-status {
+    display: none;
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -164,6 +169,7 @@ botton {
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
+    border-radius: 1rem;
 }
 
 .modal-content {
@@ -177,7 +183,25 @@ botton {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    border-radius: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    border-top: 1px solid #113946;
+    padding: 15px 15px;
+    text-align: right;
+    align-content: center;
+}
+
+.modal-footer>button {
+    width: 75px;
+    height: 30px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self:flex-end;
 }
 
 .taskEditForm {
@@ -185,7 +209,14 @@ botton {
     align-items: center;
     padding: 1rem;
     border: 1px solid #888;
+    clear: both;
 
+}
+
+.taskEditForm
+input {
+    width: 100%;
+    clear: both;
 }
 
 /* The Close Button */
