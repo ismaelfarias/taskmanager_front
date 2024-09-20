@@ -1,0 +1,243 @@
+/* Geral */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    color: #113946;
+    background-color: #fff2d8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #113946;
+}
+
+/* Header */
+
+header {
+    background-color: #fff2d8;
+    padding: 0 1rem 1rem;
+    margin: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+button {
+    background-color: #FFF2D8;
+    color: #102F5e;
+    border: 2px solid #102F5e;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: #FFF2D8;
+
+}
+
+button:hover>i {
+    color: #bca37f;
+    font-size: 1.1rem;
+}
+
+button i {
+    color: #102F5e;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+input,
+select {
+    padding: 0.25rem 0.5rem;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    flex: 1 1 200px;
+    min-height: 92vh;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.new-container {
+    display: flex;
+    background-color: #EAD7BB;
+    margin: 10px;
+    margin-right: 10px;
+    width: 33%;
+    border-radius: 15px;
+}
+
+.new-container,
+h4 {
+    padding: 5px;
+}
+
+.new-items {
+    width: 100%;
+}
+
+.doing-container {
+    background-color: #EAD7BB;
+    margin: 10px;
+    width: 33%;
+    border-radius: 15px;
+}
+
+.doing-container,
+h4 {
+    padding: 10px;
+}
+
+.done-container {
+    background-color: #EAD7BB;
+    margin: 10px;
+    width: 33%;
+    border-radius: 15px;
+}
+
+.done-container,
+h4 {
+    padding: 10px;
+}
+
+
+.tasks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-left: .4rem solid #113946;
+    margin: 1 rem;
+    margin-right: 1 rem;
+    transition: .3s;
+}
+
+.tasks,
+h4 {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.tasks,
+botton {
+    margin-left: 0.4rem;
+}
+
+.tasks:hover {
+    /*background-color: #bca37f;*/
+    border-color: #113946;
+    font-size: 1.5rem;
+}
+
+.task-status {
+    display: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    border-radius: 1rem;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    border-top: 1px solid #113946;
+    padding: 15px 15px;
+    text-align: right;
+    align-content: center;
+}
+
+.modal-footer>button {
+    width: 75px;
+    height: 30px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.taskEditForm {
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #888;
+    clear: both;
+
+}
+
+.taskEditForm input {
+    width: 100%;
+    clear: both;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background-color: #bca37f;
+}
+
+.form-control {
+    display: flex;
+}

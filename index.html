@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Author: Francisco Ismael, MVP: Desenvolvimento Full Stack Básico">
+    <title>Task Board</title>
+    <!-- Icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1><i class="fa-solid fa-list-check"></i> Task Board</h1>
+    </header>
+    <div class="container">
+        <div class="new-container">
+            <div class="new-items" id="new-items">
+                <form id="newTask-form">
+                    <div class="form-control">
+                        <input type="text" id="newTask" placeholder="Nova Tarefa" minlength="1" maxlength="50" />
+                        <button type="submit" title="Submit">
+                            <i class="fa-thin fa-plus"></i>
+                        </button>
+                    </div>
+                </form>
+                <hr>
+            </div>
+        </div>
+        <div class="doing-container" id="doing-tasks">
+            <h3>Doing</h3>
+            <hr>
+        </div>
+        <div class="done-container" id="done-tasks">
+            <h3>Done</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="modal" id="task-modal">
+        <div class="modal-content" id="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h4><i class="fa-solid fa-list-check"></i> Atualizar Tarefa</h4>
+            </div>
+            <div class="modal-content-form" id="modal-content-form">
+                <form id="modal-form">
+                    <span class="modal-task-id taskID" id="modal-task-id">123</span>
+                    <label for="modal-task-title"></label>
+                    <input class="taskTitulo" id="modal-task-title" type="text" name="modal-task-title"
+                        value="Tarefa Nova" minlength="1" maxlength="50" required size="50">
+                    <br />
+                    <label for="modal-task-description">Descrição</label>
+                    <br />
+                    <textarea form="modal-form" class="taskDescricao" name="modal-task-description"
+                        id="modal-task-description" cols="56" rows="10"></textarea>
+                    <br>
+                    <span class="task-modal-status task-status" id="task-modal-status"></span>
+                    <button class="saveInput">Salvar</button>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                <button class="saveInput">Salvar</button>
+            </div> -->
+        </div>
+    </div>
+    <!-- Footer Info MVP-->
+    <footer>
+        <p>MVP Sprint Desenvolvimento Full Stack Básico</p>
+    </footer>
+</body>
+
+</html>
